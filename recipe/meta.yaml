@@ -1,5 +1,5 @@
 {% set name = "grpc-stubs" %}
-{% set version = "1.24.10" %}
+{% set version = "1.24.11" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/grpc-stubs-{{ version }}.tar.gz
-  sha256: 92460dbabea0e77e34241afe7594b86f5cef2f9ae6ca0230f1ae2430427c20f9
+  sha256: b02b0445b264eb3d310a2c14816c440f98f76d4ba2a5746adf148d57cca8b3a5
 
 build:
   number: 0
