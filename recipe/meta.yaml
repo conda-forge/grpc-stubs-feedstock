@@ -7,25 +7,27 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/grpc-stubs-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/grpc-stubs-{{ version }}.tar.gz
   sha256: 3e1b642775cbc3e0c6332cfcedfccb022176db87e518757bef3a1241397be406
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - grpcio
     - mypy >=0.730
-    - python >=3.6
+    - python >={{ python_min }}
     - typing-extensions
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     # grpc-stubs doesn't include py.typed
     # https://www.python.org/dev/peps/pep-0561/#stub-only-packages
