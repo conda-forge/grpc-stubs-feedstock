@@ -1,5 +1,5 @@
 {% set name = "grpc-stubs" %}
-{% set version = "1.53.0.5" %}
+{% set version = "1.53.0.6" %}
 
 
 package:
@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/grpc-stubs-{{ version }}.tar.gz
-  sha256: 3e1b642775cbc3e0c6332cfcedfccb022176db87e518757bef3a1241397be406
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 70a0840747bd73c2c82fe819699bbf4fcf6d59bd0ed27a4713a240e0c697e1ff
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
